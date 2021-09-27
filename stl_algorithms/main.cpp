@@ -1,5 +1,30 @@
-#include <iostream>
+#include <vector>
+#include <algorithm>
 
+#include "wrapper.cpp"
+
+int main() {
+    /* 4.1
+    Test t;
+
+    Wrapper<int> w(std::bind(&Test::printExt, t, std::placeholders::_1));
+    std::vector<int> v({1, 3, 4, 6, 8});
+
+    std::copy(v.begin(), v.end(), w);
+    */
+    // ¤.2
+    Test t;
+    std::vector<int> v({1, 3, 4, 6, 8});
+
+    std::for_each(v.begin(), v.end(), [t](int e) -> void {
+        t.printExt(e);
+    });
+
+
+    return 0;
+}
+
+/*
 #include "algo.cpp"
 
 int main() {
@@ -66,3 +91,4 @@ int main() {
 
     }
 }
+ */
